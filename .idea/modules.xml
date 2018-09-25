@@ -17,6 +17,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-parent.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-parent_main.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-parent_main.iml" group="taotao-parent" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-parent_test.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-parent_test.iml" group="taotao-parent" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-portal.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-portal.iml" group="taotao-portal" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-portal/taotao-portal_main.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-portal/taotao-portal_main.iml" group="taotao-portal" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-portal/taotao-portal_test.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-portal/taotao-portal_test.iml" group="taotao-portal" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-projo.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-projo.iml" group="taotao-projo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-projo/taotao-projo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-projo/taotao-projo_main.iml" group="taotao-projo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/taotao-projo/taotao-projo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/taotao-projo/taotao-projo_test.iml" group="taotao-projo" />

@@ -22,6 +22,8 @@
       <module name="taotao-mapper_test" target="1.8" />
       <module name="taotao-parent_main" target="1.8" />
       <module name="taotao-parent_test" target="1.8" />
+      <module name="taotao-portal_main" target="1.8" />
+      <module name="taotao-portal_test" target="1.8" />
       <module name="taotao-projo_main" target="1.8" />
       <module name="taotao-projo_test" target="1.8" />
       <module name="taotao-service_main" target="1.8" />
