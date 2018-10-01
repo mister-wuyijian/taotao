@@ -46,4 +46,19 @@ public class ContentController {
         return map;
     }
 
+    @RequestMapping(value = "/rest/content/edit" , method = RequestMethod.POST)
+    @ResponseBody
+    public String edit(Content content){
+        contentService.update(content);
+        return "success";
+    }
+
+    @RequestMapping(value = "/rest/content/delete" , method = RequestMethod.POST)
+    @ResponseBody
+    public String delete(Long ids){
+        System.out.println(ids);
+        contentService.delete(ids);
+        return "success";
+    }
+
 }

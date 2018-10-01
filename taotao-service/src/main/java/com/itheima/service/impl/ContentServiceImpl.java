@@ -39,4 +39,16 @@ public class ContentServiceImpl implements ContentService {
 
         return new PageInfo<Content>(list);
     }
+
+    @Override
+    public int update(Content content) {
+       return contentMapper.updateByPrimaryKeySelective(content);
+    }
+
+    @Override
+    public int delete(Long id) {
+        return contentMapper.deleteByPrimaryKey(id);
+    }
+
+
 }
