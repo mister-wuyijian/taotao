@@ -48,17 +48,35 @@ public class ContentController {
 
     @RequestMapping(value = "/rest/content/edit" , method = RequestMethod.POST)
     @ResponseBody
-    public String edit(Content content){
-        contentService.update(content);
-        return "success";
+    public Map<String,Integer> edit(Content content){
+        int result=contentService.update(content);
+        Map<String ,Integer> map = new HashMap<>();
+        //表示更新成功
+        if(result > 0 ){
+            map.put("status",200);
+        }else{
+            map.put("status" , 500);
+        }
+
+        return map;
     }
 
     @RequestMapping(value = "/rest/content/delete" , method = RequestMethod.POST)
-    @ResponseBody
-    public String delete(Long ids){
+    public Map<String ,Integer> delete(String ids){
         System.out.println(ids);
-        contentService.delete(ids);
-        return "success";
+        int result=contentService.delete(ids);
+
+        System.out.println("result=" + result);
+
+        Map<String ,Integer> map = new HashMap<>();
+        //表示更新成功
+        if(result > 0 ){
+            map.put("status",200);
+        }else{
+            map.put("status" , 500);
+        }
+
+        return map;
     }
 
 }

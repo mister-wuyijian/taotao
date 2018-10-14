@@ -46,8 +46,21 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public int delete(Long id) {
-        return contentMapper.deleteByPrimaryKey(id);
+    public int delete(String ids) {
+        String[] idArray = ids.split(",");
+        int result = 0 ;
+        for(String id : idArray){
+
+            result += contentMapper.deleteByPrimaryKey(Long.parseLong(id));
+        }
+        return result;
+    }
+
+    @Override
+    public List<Content> selectByCategoryId(long cid) {
+        Content content=new Content();
+        content.setCategoryId(cid);
+        return  contentMapper.select(content);
     }
 
 

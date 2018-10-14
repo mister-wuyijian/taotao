@@ -1,7 +1,9 @@
 package com.itheima;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /*
  *  @项目名：  taotao-parent 
@@ -12,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *  @描述：    TODO
  */
 @SpringBootApplication
+@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
 public class PortalApp {
     public static void main(String [] args){
         SpringApplication.run(PortalApp.class,args)  ;
