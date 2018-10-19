@@ -1,17 +1,10 @@
 package com.itheima.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.google.gson.Gson;
-import com.itheima.pojo.Content;
 import com.itheima.service.ContentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /*
  *  @项目名：  taotao-parent 
@@ -28,24 +21,13 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(Model model){
-
+        System.out.println("要获取首页的广告数据了~");
         int categoryId = 89;
+        String json=contentService.selectByCategoryId(categoryId);
 
-        List<Content> list=contentService.selectByCategoryId(categoryId);
-        List<Map<String,Object>> lists=new ArrayList<>();
-        for(Content content:list){
-            Map<String , Object> map = new HashMap<>();
-            map.put("src" , content.getPic());
-            map.put("width",670);
-            map.put("height" , 240);
-            map.put("href",content.getUrl());
-
-            lists.add(map);
-        }
-
-        String json=new Gson().toJson(lists);
         model.addAttribute("list",json);
-
         return "index";
+
     }
+
 }
