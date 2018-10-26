@@ -1,8 +1,5 @@
 package com.itheima.service;
 
-import com.github.pagehelper.PageInfo;
-import com.itheima.pojo.User;
-
 /*
  *  @项目名：  taotao-parent 
  *  @包名：    com.itheima.service
@@ -12,9 +9,5 @@ import com.itheima.pojo.User;
  *  @描述：    TODO
  */
 public interface UserService {
-    void save();
-
-    User selectOne(long id);
-
-    PageInfo<User> findByPage(int currentPage,int pageSize);
+    Boolean userCheck(String param,int type);
 }

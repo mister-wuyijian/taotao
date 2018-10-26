@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import com.itheima.pojo.User;
 import com.itheima.service.UserService;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    //@Reference
+    @Reference
     private UserService userService;
 
     @RequestMapping("save")
