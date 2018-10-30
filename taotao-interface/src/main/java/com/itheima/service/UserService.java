@@ -10,4 +10,6 @@ package com.itheima.service;
  */
 public interface UserService {
     Boolean userCheck(String param,int type);
+
+    String selectUser(String ticket);
 }
