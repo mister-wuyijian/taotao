@@ -1,5 +1,7 @@
 package com.itheima.service;
 
+import com.itheima.pojo.User;
+
 /*
  *  @项目名：  taotao-parent 
  *  @包名：    com.itheima.service
@@ -12,4 +14,8 @@ public interface UserService {
     Boolean userCheck(String param,int type);
 
     String selectUser(String ticket);
+
+    int addUser(User user);
+
+    String login(User user);
 }

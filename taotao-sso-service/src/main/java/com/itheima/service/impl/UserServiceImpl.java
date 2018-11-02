@@ -6,7 +6,9 @@ import com.itheima.pojo.User;
 import com.itheima.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.util.DigestUtils;
 
+import java.util.Date;
 import java.util.List;
 
 /*
@@ -52,5 +54,23 @@ public class UserServiceImpl implements UserService{
 
         String key = "iit_"+ticket;
         return redisTemplate.opsForValue().get(key);
+    }
+
+    @Override
+    public int addUser(User user) {
+
+        user.setCreated(new Date());
+        user.setUpdated(new Date());
+        String password=user.getPassword();
+        password= DigestUtils.md5DigestAsHex(password.getBytes());
+        user.setPassword(password);
+        return userMapper.insert(user);
+
+    }
+
+    @Override
+    public String login(User user) {
+
+        return null;
     }
 }

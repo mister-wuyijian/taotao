@@ -5,7 +5,21 @@
 			<li class="fore1 ld" clstag="homepage|keycount|home2013|01a"><b></b><a href="javascript:addToFavorite()" rel="nofollow">收藏淘淘</a></li>
 		</ul>
 		<ul class="fr lh">
-			<li class="fore1" id="loginbar" clstag="homepage|keycount|home2013|01b">您好！欢迎来到淘淘！<a href="javascript:login()">[登录]</a>&nbsp;<a href="javascript:regist()">[免费注册]</a></li>
+
+			<li class="fore1" id="loginbar" clstag="homepage|keycount|home2013|01b">
+
+				<%--如果已经登录了，就显示用户名--%>
+				<c:if test="true">
+					<font color="blue"> ${user.username}</font>
+				</c:if>
+
+				<%--如果没有登录，就显示登录的入口--%>
+				<c:if test="${user == null}">
+					您好！欢迎来到淘淘！
+					<a href="javascript:login()">[登录]</a>&nbsp;<a href="javascript:regist()">[免费注册]</a>
+				</c:if>
+
+			</li>
 			<li class="fore2 ld" clstag="homepage|keycount|home2013|01c">
 				<s></s>
 				<a href="http://jd2008.jd.com/JdHome/OrderList.aspx" rel="nofollow">我的订单</a>
