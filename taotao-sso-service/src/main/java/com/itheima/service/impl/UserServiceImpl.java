@@ -1,6 +1,7 @@
 package com.itheima.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.google.gson.Gson;
 import com.itheima.mapper.UserMapper;
 import com.itheima.pojo.User;
 import com.itheima.service.UserService;
@@ -10,6 +11,7 @@ import org.springframework.util.DigestUtils;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /*
  *  @项目名：  taotao-parent 
@@ -71,6 +73,26 @@ public class UserServiceImpl implements UserService{
     @Override
     public String login(User user) {
 
+        //先对用户的密码进行加密处理
+        String password = user.getPassword();
+        password = DigestUtils.md5DigestAsHex(password.getBytes());
+        user.setPassword(password);
+
+        List<User> list = userMapper.select(user);
+
+        if(list.size() > 0 ){
+
+            User loginUser = list.get(0);
+
+            String json = new Gson().toJson(loginUser);
+
+            String key = "itt02_"+ UUID.randomUUID().toString();
+            System.out.println("key="+key);
+
+            redisTemplate.opsForValue().set(key, json);
+
+            return key;
+        }
         return null;
     }
 }
